@@ -1,13 +1,60 @@
 <!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <title>QuizApp</title>
-</head>
-<body>
-    <h1>Hallo Welt!</h1>
-</body> 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+        <link rel="icon" type="image/x-icon" href="./assets/logo 2.png">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+        <title>QuizApp</title>
+    </head>
+    <body>
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1">QuizApp</span>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="card quiz-card">
+                <img src="./assets/logo 2.png" class="card-img-top" alt="logo png">
+                <div class="card-body">
+                    <h5 class="card-title">Frage</h5>
+
+                    <div class="card mb-2">
+                        <div class="card-body">
+                            Antwort 1
+                        </div>
+                    </div>
+
+                    <div class="card mb-2">
+                        <div class="card-body">
+                            Antwort 2
+                        </div>
+                    </div>
+
+                    <div class="card mb-2">
+                        <div class="card-body">
+                            Antwort 3
+                        </div>
+                    </div>
+
+                    <div class="card mb-2">
+                        <div class="card-body">
+                            Antwort 4
+                        </div>
+                    </div>
+
+                    <div class="question-footer">
+                        <span>
+                            <b>1</b> von <b>5</b> Fragen
+                        </span>
+                        <button class="btn btn-primary">Nächste Frage</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </body> 
 </html>
