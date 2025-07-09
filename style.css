@@ -21,3 +21,16 @@ body {
 .quiz-card {
     width: 30rem !important;
 }
+
+.quiz-answer-card {
+    cursor: pointer;
+}
+
+.quiz-answer-card:hover {
+    background-color: #e0d4ff;
+    transform: scale(1.02);
+}
+
+.bg-success, .bg-danger {
+    color: white;
+}

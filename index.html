@@ -9,7 +9,7 @@
         <script src="script.js"></script>
         <title>QuizApp</title>
     </head>
-    <body>
+    <body onload="init()">
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
                 <span class="navbar-brand mb-0 h1">QuizApp</span>
@@ -18,39 +18,45 @@
 
         <div class="container">
             <div class="card quiz-card">
-                <img src="./assets/logo 2.png" class="card-img-top" alt="logo png">
-                <div class="card-body">
-                    <h5 class="card-title">Frage</h5>
+                <img src="./assets/logo 2.png" class="card-img-top" alt="logo png" id="quiz-logo">
 
-                    <div class="card mb-2">
-                        <div class="card-body">
+                <div class="card-body" id="endScreen" style="display: none;">
+                    <img src="./assets/Group 5.png" alt="">
+                    Quiz beendet!
+                </div>
+
+                <div class="card-body" id="questionBody">
+                    <h5 class="card-title" id="question-text">Frage</h5>
+
+                    <div class="card quiz-answer-card mb-2" onclick="selectAnswer('answer_1')">
+                        <div class="card-body" id="answer_1">
                             Antwort 1
                         </div>
                     </div>
 
-                    <div class="card mb-2">
-                        <div class="card-body">
+                    <div class="card quiz-answer-card mb-2" onclick="selectAnswer('answer_2')">
+                        <div class="card-body" id="answer_2">
                             Antwort 2
                         </div>
                     </div>
 
-                    <div class="card mb-2">
-                        <div class="card-body">
+                    <div class="card quiz-answer-card mb-2" onclick="selectAnswer('answer_3')">
+                        <div class="card-body" id="answer_3">
                             Antwort 3
                         </div>
                     </div>
 
-                    <div class="card mb-2">
-                        <div class="card-body">
+                    <div class="card quiz-answer-card mb-2" onclick="selectAnswer('answer_4')">
+                        <div class="card-body" id="answer_4">
                             Antwort 4
                         </div>
                     </div>
 
                     <div class="question-footer">
                         <span>
-                            <b>1</b> von <b>5</b> Fragen
+                            <b id="current-question">1</b> von <b id="total-questions">10</b> Fragen
                         </span>
-                        <button class="btn btn-primary">Nächste Frage</button>
+                        <button class="btn btn-primary" disabled id="next_button" onclick="nextQuestion()">Nächste Frage</button>
                     </div>
 
                 </div>
