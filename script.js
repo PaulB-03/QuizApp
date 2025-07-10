@@ -83,6 +83,10 @@ let questions = [
 
 let currentQuestionIndex = 0;
 
+let correctAnswers = 0;
+
+let hasAnswered = false;
+
 function init() {
     document.getElementById("total-questions").innerText = questions.length;
     showQuestion();
@@ -93,10 +97,12 @@ function init() {
 function showQuestion() {
 
     if (currentQuestionIndex >= questions.length) {
-        // TODO: Show end screen with results
         document.getElementById("endScreen").style.display = "block";
         document.getElementById("questionBody").style.display = "none";
         document.getElementById("quiz-logo").style.display = "none";
+
+        document.getElementById("all-questions").innerText = questions.length;
+        document.getElementById("correct-answers").innerText = correctAnswers;
     }
 
     let question = questions[currentQuestionIndex];
@@ -108,12 +114,18 @@ function showQuestion() {
 }
 
 function selectAnswer(answerIndex) {
+    if (hasAnswered) {
+        return;
+    }
+    hasAnswered = true;
+
     let question = questions[currentQuestionIndex];
     let selectedAnswer = answerIndex.slice(-1);
     let idOfRightAnswer = "answer_" + question.right_answer;
 
     if(selectedAnswer == question["right_answer"]) {
         document.getElementById(answerIndex).parentNode.classList.add("bg-success");
+        correctAnswers++;
     } else {
         document.getElementById(answerIndex).parentNode.classList.add("bg-danger");
         document.getElementById(idOfRightAnswer).parentNode.classList.add("bg-success");
@@ -122,6 +134,7 @@ function selectAnswer(answerIndex) {
 }
 
 function nextQuestion() {
+    hasAnswered = false;
     currentQuestionIndex++;
 
     document.getElementById("next_button").disabled = true;

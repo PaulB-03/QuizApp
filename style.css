@@ -34,3 +34,15 @@ body {
 .bg-success, .bg-danger {
     color: white;
 }
+
+#endScreen {
+    text-align: center;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
