@@ -7,7 +7,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 80vh;
 }
 
 .question-footer {
@@ -20,6 +20,8 @@ body {
 
 .quiz-card {
     width: 30rem !important;
+    margin-top: 100px;
+    
 }
 
 .quiz-answer-card {
@@ -45,4 +47,20 @@ body {
 
 .text-center {
     text-align: center;
+}
+
+.progress {
+    width: 95%;
+    align-self: center;
+}
+
+.card-img-top {
+    width: 300px;
+    height: auto;
+    align-self: center;
+}
+
+.margin-tb {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

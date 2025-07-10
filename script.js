@@ -105,6 +105,10 @@ function showQuestion() {
         document.getElementById("correct-answers").innerText = correctAnswers;
     }
 
+    let percentage = Math.round((currentQuestionIndex) / questions.length * 100);
+    document.getElementById("progress-bar").innerHTML = percentage + "%";
+    document.getElementById("progress-bar").style.width = percentage + "%";
+
     let question = questions[currentQuestionIndex];
     document.getElementById("question-text").innerText = question.question;
     document.getElementById("answer_1").innerText = question.answer_1;
@@ -148,4 +152,22 @@ function nextQuestion() {
 
 function updateCurrentQuestion() {
     document.getElementById("current-question").innerText = currentQuestionIndex + 1;
+}
+
+function restartGame() {
+    currentQuestionIndex = 0;
+    correctAnswers = 0;
+    hasAnswered = false;
+
+    document.getElementById("endScreen").style.display = "none";
+    document.getElementById("questionBody").style.display = "block";
+    document.getElementById("quiz-logo").style.display = "block";
+
+    document.getElementById("next_button").disabled = true;
+    document.querySelectorAll(".quiz-answer-card").forEach(card => {
+        card.classList.remove("bg-success", "bg-danger");
+    });
+
+    init();
+    updateCurrentQuestion();
 }
